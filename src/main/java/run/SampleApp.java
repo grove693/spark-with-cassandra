@@ -17,25 +17,23 @@ import app.CassandraApp;
 
 public class SampleApp {
 
-	public static String INPUT_LOCATION_MOVIE_FILE = "movies.csv";
-	public static String INPUT_LOCATION_MOVIE_RATINGS_FILE = "ratings.csv";
+    public static String INPUT_LOCATION_MOVIE_FILE = "movies.csv";
+    public static String INPUT_LOCATION_MOVIE_RATINGS_FILE = "ratings.csv";
 
-	public static void main(String[] args) throws Exception {
-		
-		CassandraApp.readFromDB(createCassandraClusterConfig());
-	
+    public static void main(String[] args) throws Exception {
 
-	}
-	
-	private static SparkConf createCassandraClusterConfig() {
-		SparkConf conf =  new SparkConf();
-		conf.setAppName("Cassandra App");
-		conf.setMaster("local");
-		conf.set("spark.cassandra.connection.host", "127.0.0.1,10.0.75.2");
-	    conf.set("spark.cassandra.connection.port", "9042");
-	    conf.set("spark.sql.warehouse.dir", "D:/sparkSample/warehouse");
+        CassandraApp.readFromDB(createCassandraClusterConfig());
+    }
 
-		return conf;
-	}
+    private static SparkConf createCassandraClusterConfig() {
+        SparkConf conf = new SparkConf();
+        conf.setAppName("Cassandra App");
+        conf.setMaster("local");
+        conf.set("spark.cassandra.connection.host", "127.0.0.1,10.0.75.2");
+        conf.set("spark.cassandra.connection.port", "9042");
+        conf.set("spark.sql.warehouse.dir", "D:/sparkSample/warehouse");
+
+        return conf;
+    }
 
 }

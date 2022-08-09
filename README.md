@@ -1,9 +1,20 @@
-# spark-with-cassandra
+# Spark & Cassandra
 
 
-HOW TO RUN APP
+Description
 =======================================
-Simply run it as a simple Java App
+Java application leveraging Apache Spark to join two csv files (movies and ratings)
+and flush the result to a Cassandra DB cluster.
+
+Tech Stack
+=======================================
+- Java 8
+- Cassandra DB
+- Apache Spark
+
+Steps to run
+=======================================
+Run the *SampleApp* class
 
 
 Requirements
@@ -11,11 +22,7 @@ Requirements
 
 Cassandra DB
 ------------------------
-   - keyspace   mykeyspace
-   - table movie
-          -movieid, title, rating
-          
-What does the App do
-=================================
- -Reads content from Cassandra
- - Performs a join between two csv files (movies and ratings) and writes the result into cassandra
+   - keyspace   *mykeyspace*
+   - table *movie*
+       - movieid, title, rating
+
